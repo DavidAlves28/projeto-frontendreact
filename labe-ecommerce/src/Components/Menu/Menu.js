@@ -16,8 +16,8 @@ export default function Menu (){
                 Nome :
             <Input value={name} onChange={selectName} placeholder="VAMOS"/>
             </label>
-            <button  onClick={imprimir}> Teste </button>
-
+            
+            <button  onClick={imprimir}> Filtrar </button>
         </MenuStyle>
     )
 } 
