@@ -1,11 +1,10 @@
 import React from "react";
+import { ContainerCarrinho } from "./style";
 export default function Carrinho (){
     return (
 
-        <>
-        <h1>
-            CARRINHO
-        </h1>
-        </>
+       <ContainerCarrinho>
+        <h1>carrinho</h1>
+       </ContainerCarrinho>
     )
 }
