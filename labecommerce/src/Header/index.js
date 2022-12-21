@@ -2,15 +2,14 @@ import React from "react";
 import { ListaMenu, ListaA,Container, Nav, InputPesquisa, Select, Icone } from './style';
 import Carrinho from '../Imagens/carrinho-de-compras.png'
 export default function Header (props) {
-    const irParaCarrinhoPedidos = () => {
-        props.setPage(3)
+    const irParaCarrinhoPedidos = (n) => {
+        props.setPage(n)
     }
     return (
         <Container>
-            <ListaMenu>
-                <ListaA>Categorias</ListaA>
+            <ListaMenu>                
                 <ListaA>Contato</ListaA>
-                <ListaA>Carrinho  </ListaA>
+                <ListaA onClick={()=>irParaCarrinhoPedidos(3)}>Carrinho</ListaA>
                 <Icone src={Carrinho}/> 
             </ListaMenu>
             <Nav>

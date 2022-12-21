@@ -1,6 +1,6 @@
-import React from "react";
+import React  from "react";
 import CardProdutos from "../CardProdutos";
-import { Container, ContainerProdutos , Contador} from "./style";
+import { Container, ContainerProdutos } from "./style";
 import Capacete from "../Imagens/capacete.png";
 import CapaceteInfantil from "../Imagens/capaceteInfantil.jpg"
 import CanecaNasaBranca from "../Imagens/canecaNasa.png"
@@ -17,21 +17,21 @@ import Boneco1 from '../Imagens/boneco1.jpg'
 import Boneco2 from '../Imagens/boneco2.jpg'
 import Foguete2 from '../Imagens/foguete2.jpg'
 import CardCarrinho from "../CardCarrinho";
-import { ItemCarrinho } from "../CardCarrinho/style";
+
 
 //Produtos 
 export default function Produtos(props) {
     const produtos = [
         {
-            id: Date.now(),
-            quantidade:'1',
+            id: 1,
+            quantidade: '1',
             nome: "Capacete Espacial Raro",
             imagem: Capacete,
             categoria: "Acessórios",
             descricao: "Capecete Usado em missão Espacial",
             preco: '999.99',
         }, {
-            id: Date.now(),
+            id: 2,
             quantidade:'1',
             nome: "Capacete Infantil",
             imagem: CapaceteInfantil,
@@ -40,7 +40,7 @@ export default function Produtos(props) {
             preco: '99.99',
         },
         {
-            id: Date.now(),
+            id:3 ,
             quantidade:'1',
             imagem: CanecaNasaBranca,
             nome: "Caneca Nasa Branca",
@@ -49,7 +49,7 @@ export default function Produtos(props) {
             preco: '149.99',
         },
         {
-            id: Date.now(),
+            id: 4,
             quantidade:'1',
             imagem: CanecaNasaPreta,
             nome: "Caneca Nasa Preta",
@@ -58,7 +58,7 @@ export default function Produtos(props) {
             preco: '149.99',
         },
         {
-            id: Date.now(),
+            id: 5,
             quantidade:'1',
             imagem: OnibusMiniatura,
             nome: "Onibus Espacial Miniatura",
@@ -67,7 +67,7 @@ export default function Produtos(props) {
             preco: '299.55',
         },
         {
-            id: Date.now(),
+            id: 6,
             quantidade:'1',
             imagem: TrajeEspacial,
             nome: "Traje Espacial Original",
@@ -76,7 +76,7 @@ export default function Produtos(props) {
             preco: '1499.99',
         },
         {
-            id: Date.now(),
+            id:7 ,
             quantidade:'1',
             imagem: Camiseta1,
             nome: "Camiseta Astronauta Estampada",
@@ -85,7 +85,7 @@ export default function Produtos(props) {
             preco: '79.99',
         },
         {
-            id: Date.now(),
+            id:8 ,
             quantidade:'1',
             imagem: Camiseta2,
             nome: "Camiseta Astronauta Estampada",
@@ -94,7 +94,7 @@ export default function Produtos(props) {
             preco: '79.99',
         },
         {
-            id: Date.now(),
+            id:9 ,
             quantidade:'1',
             imagem: Camiseta3,
             nome: "Camiseta Astronauta Estampada",
@@ -103,7 +103,7 @@ export default function Produtos(props) {
             preco: '79.99',
         },
         {
-            id: Date.now(),
+            id: 10,
             quantidade:'1',
             imagem: Blusa1,
             nome: "Blusa espacial Estampada",
@@ -112,7 +112,7 @@ export default function Produtos(props) {
             preco: '179.99',
         },
         {
-            id: Date.now(),
+            id: 11,
             quantidade:'1',
             imagem: Blusa2,
             nome: "Blusa espacial Estampada",
@@ -121,7 +121,7 @@ export default function Produtos(props) {
             preco: '179.99',
         },
         {
-            id: Date.now(),
+            id: 12,
             quantidade:'1',
             imagem: Blusa3,
             nome: "Blusa espacial Estampada",
@@ -130,7 +130,7 @@ export default function Produtos(props) {
             preco: '179.99',
         },
         {
-            id: Date.now(),
+            id:13 ,
             quantidade:'1',
             imagem: Boneco1,
             nome: "Boneco Miniatura",
@@ -139,7 +139,7 @@ export default function Produtos(props) {
             preco:'29.99',
         },
         {
-            id: Date.now(),
+            id: 14,
             quantidade:'1',
             imagem: Boneco2,
             nome: "Boneco Miniatura",
@@ -147,7 +147,7 @@ export default function Produtos(props) {
             descricao: "Boneco miniatura Astronauta",
             preco: '29.99',
         }, {
-            id: Date.now(),
+            id: 15,
             quantidade:'1',
             imagem: Foguete2,
             nome: "Foguete Miniatura",
@@ -163,7 +163,13 @@ export default function Produtos(props) {
         <Container>
             {/* CARD LATERAL DOS PRODUTOS ADICIONADOS! */}
             <ContainerProdutos>
-                <CardCarrinho total={props.total} setTotal={props.setTotal} listaCarrinho={props.listaCarrinho} setListaCarrinho={props.setListaCarrinho}></CardCarrinho>
+                <CardCarrinho itensUnicos={props.itensUnicos} total={props.total} 
+                setTotal={props.setTotal} 
+                listaCarrinho={props.listaCarrinho} 
+                setListaCarrinho={props.setListaCarrinho}
+                contador={props.contador} setContador={props.setContador}
+                page={props.page} setPage={props.setPage}> 
+                </CardCarrinho>
             </ContainerProdutos>
             {/* Secao onde se encontra os cards dos produtos.
              */}
@@ -204,9 +210,10 @@ export default function Produtos(props) {
                         return (
                             <CardProdutos id={produto.id} nome={produto.nome}
                                 imagem={produto.imagem} descricao={produto.descricao}
-                                quantidade={produto.quantidade}
-                                preco={produto.preco} adicionarCarrinho={props.adicionarCarrinho}
+                                quantidade={produto.quantidade} preco={produto.preco} 
                                 contador={props.contador} setContador={props.setContador}
+                                adicionarCarrinho={props.adicionarCarrinho} quantidades={props.quantidades}
+                                setQuantidades={props.setQuantidades}
                             >
                             </CardProdutos>
 

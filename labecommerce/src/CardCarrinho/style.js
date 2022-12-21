@@ -30,3 +30,7 @@ padding: 2px;
 
 
 `
+export const Contador = styled.div`
+
+display: flex;
+`

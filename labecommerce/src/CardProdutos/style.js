@@ -59,3 +59,8 @@ export const Produto = styled.section`
     }
 `
 
+export const Contador = styled.div`
+display:flex;
+
+`
+

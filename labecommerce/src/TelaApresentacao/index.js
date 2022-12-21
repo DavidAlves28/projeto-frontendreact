@@ -2,8 +2,8 @@ import React from "react";
 import { Apresentacao, ButtonPage, ContainerButton, TagA, Titulo } from "./style";
 
 export default function ContainerApresentacao(props) {
-    const changePage = () => {
-        props.setPage(2)
+    const changePage = (n) => {
+        props.setPage(n)
     }
 
 
@@ -14,9 +14,9 @@ export default function ContainerApresentacao(props) {
         </Titulo>
             <ContainerButton>
 
-                <ButtonPage onClick={() => changePage()}  > PRODUTOS</ButtonPage>
-                <ButtonPage onClick={() => changePage()} > CARRINHO</ButtonPage>
-                <ButtonPage onClick={() => changePage()} > CONTATO</ButtonPage>
+                <ButtonPage onClick={() => changePage(2)}  > PRODUTOS</ButtonPage>
+                <ButtonPage onClick={() => changePage(3)} > CARRINHO</ButtonPage>
+                <ButtonPage onClick={() => changePage(2)} > CONTATO</ButtonPage>
             </ContainerButton>
         </Apresentacao>
 
