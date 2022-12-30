@@ -10,7 +10,7 @@ export default function Header (props) {
             <ListaMenu>                
                 <ListaA>Contato</ListaA>
                 <ListaA onClick={()=>irParaCarrinhoPedidos(3)}>Carrinho</ListaA>
-                <Icone src={Carrinho}/> 
+                <Icone src={Carrinho} />
             </ListaMenu>
             <Nav>
                 <InputPesquisa onChange={props.changeSearch} type={'text'} placeholder="Pesquisar"></InputPesquisa>

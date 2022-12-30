@@ -1,18 +1,20 @@
 import React from "react";
-import { ContainerCarrinho, ItemCarrinho, ListaContainer} from "./style";
+import { ContainerCarrinho, ItemCarrinho, ListaContainer } from "./style";
 
 export default function CardCarrinho(props) {
 
     // Remover item do carrinho
     const removeItemCarrinho = (item) => {
+      
         const filterItem = props.listaCarrinho.filter((produto) => produto.id !== item)
         props.setListaCarrinho(filterItem)
     }
-
+    
     // função para soma de preços dos itens adicionados.
-    const total = props.listaCarrinho.reduce((produto, nproduto) => {
+    const total = props.itensUnicos.reduce((produto, nproduto) => {
         return produto + nproduto.quantidade * nproduto.preco
-    }, 0)
+    },0)
+
 
     return (
         <ContainerCarrinho>
@@ -21,8 +23,11 @@ export default function CardCarrinho(props) {
                 .map((produto) => {
                     return (
                         <ListaContainer key={produto.id}>
-                            <ItemCarrinho> {produto.nome} {produto.preco} {produto.quantidade }
-                                
+                            <ItemCarrinho>
+                                {produto.quantidade}x -
+                                {produto.nome}-
+                                R${produto.preco}
+
                                 <button onClick={() => removeItemCarrinho(produto.id)}>Remover</button></ItemCarrinho>
                         </ListaContainer>
                     )

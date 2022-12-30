@@ -20,6 +20,8 @@ export const ContainerCarrinho = styled.section`
 export const ListaContainer = styled.ul`
    list-style : none ;
    color:white;
+   height: 10vh;
+   margin: 2px ;
 `
 export const ItemCarrinho  =styled.li`
 border: 1px solid ;
@@ -29,8 +31,4 @@ background:#696969;
 padding: 2px;
 
 
-`
-export const Contador = styled.div`
-
-display: flex;
 `

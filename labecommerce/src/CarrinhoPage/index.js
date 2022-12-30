@@ -8,6 +8,7 @@ export default function CarrinhoPage(props) {
 
     return (
         <ContainerCarrinho>
+
                     <h1>Confirmar Pedido</h1>
             {props.itensUnicos.map((produto) => {
                 return<Tabela key={produto.id}>
@@ -24,6 +25,7 @@ export default function CarrinhoPage(props) {
 
 
             })}
+            <button onClick={()=>props.setPage(2)}>Retornar</button>
         </ContainerCarrinho>
     )
 

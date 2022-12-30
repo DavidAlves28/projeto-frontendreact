@@ -12,20 +12,22 @@ function App() {
   //Estados 
   // input controlado de pesquisa 
   const [search, setSearch] = useState("")
+
   // onChange do input
   const changeSearch = (e) => {
     setSearch(e.target.value)
   };
 
   //input controlado para valor minimo
-  const [valueMin, setValueMin] = useState('0')
+  const [valueMin, setValueMin] = useState(0)
+
   // onChange do input
   const changeValueMin = (e) => {
     setValueMin(e.target.value)
   }
 
   // input controlado para valor Maximo
-  const [valueMax, setValueMax] = useState(Infinity)
+  const [valueMax, setValueMax] = useState(2000)
   // onChange do input
   const changeValueMax = (e) => {
     setValueMax(e.target.value)
@@ -41,78 +43,90 @@ function App() {
     setCategoria(e.target.value)
   }
 
-  
   //Estado Carrinho e funcao para adicionar e remover items
   const [listaCarrinho, setListaCarrinho] = useState([])
-  const adicionarCarrinho = (id,nome, preco, quantidade) => {
+
+  // Contador para aumentar ou diminuir quantidade de items
+  
+
+  const adicionarCarrinho = (produto) => {
+
+    // função para verificar se o produto ja existe na lista , caso existir ele incrementa na quantidade
+    listaCarrinho.forEach((novoProduto, index) => {
+      if (novoProduto.id === produto.id) {
+        listaCarrinho[index].quantidade++
+        }
+    })
+    
     const exibirLista = {
-      id: id,
-      nome: nome,
-      preco: preco,
-      quantidade: quantidade
-    }  
+      id: produto.id,
+      nome: produto.nome,
+      preco: produto.preco,
+      quantidade: 1
+    }
+
     const addcarrinho = [...listaCarrinho, exibirLista]
     setListaCarrinho(addcarrinho)
-    setTotal(preco)
+    setTotal(produto.preco)
   }
 
   // estado para não repitir item do carrinho
-  const listaCarrinhoitemUnico= new Set();
-// função para que os itens nao dupliquem
-const itensUnicos = listaCarrinho.filter((produto,add) => {
+  const listaCarrinhoitemUnico = new Set();
+  
+  // função para que os itens nao dupliquem
+  const itensUnicos = listaCarrinho.filter((produto, add) => {
     const itemDuplicados = listaCarrinhoitemUnico.has(produto.id);
     listaCarrinhoitemUnico.add(produto.id);
-    return !itemDuplicados ;
+    return !itemDuplicados;
   });
 
   //Estado para totalizar produtos
   const [total, setTotal] = useState([])
-  // Contador para aumentar ou diminuir quantidade de items
-  const [contador, setContador] = useState(1)
-
 
   // estado para trocar telas
   const [page, setPage] = useState(1)
 
-  
- // Separação de páginas para renderizar. 
-  switch(page) {
+
+  // Separação de páginas para renderizar. 
+
+  switch (page) {
     case 1:
       return (
         <ContainerApp>
-          <GlobalStyle/>
-            <ContainerApresentacao page = { page } setPage = { setPage }/> 
-        </ContainerApp>) 
-      case 2:
-        return (
-          <ContainerApp>
-          <GlobalStyle/>
+          <GlobalStyle />
+          <ContainerApresentacao page={page} setPage={setPage} />
+        </ContainerApp>)
+    case 2:
+      return (
+        <ContainerApp>
+          <GlobalStyle />
           <ContainerMain> <Header search={search} changeSearch={changeSearch}
-          valueMin={valueMin} changeValueMin={changeValueMin} setPage={setPage}
-          valueMax={valueMax} changeValueMax={changeValueMax}
-          ordenacao={ordenacao} changeOrdenacao={changeOrdenacao}
-          categoria={categoria} changeCategoria={changeCategoria}
-        />
-          <Produtos itensUnicos={itensUnicos}  categoria={categoria} changeCategoria={changeCategoria}
-            search={search} ordenacao={ordenacao}
-            adicionarCarrinho={adicionarCarrinho} total={total}
-            setTotal={setTotal} listaCarrinho={listaCarrinho}
-            setListaCarrinho={setListaCarrinho} valueMin={valueMin}
-            valueMax={valueMax} contador={contador} setContador={setContador}
-            setPage={setPage} 
+            valueMin={valueMin} changeValueMin={changeValueMin} setPage={setPage}
+            valueMax={valueMax} changeValueMax={changeValueMax}
+            ordenacao={ordenacao} changeOrdenacao={changeOrdenacao}
+            categoria={categoria} changeCategoria={changeCategoria}
+
           />
-          <Footer /></ContainerMain>
-        </ContainerApp> 
-        )
-      case 3:
-        return (
-          <ContainerApp>
-            <GlobalStyle/>
-              <CarrinhoPage  itensUnicos={itensUnicos}/>
-          </ContainerApp>) 
+            <Produtos itensUnicos={itensUnicos} categoria={categoria} changeCategoria={changeCategoria}
+              search={search} ordenacao={ordenacao}
+              adicionarCarrinho={adicionarCarrinho} total={total}
+              setTotal={setTotal} listaCarrinho={listaCarrinho}
+              setListaCarrinho={setListaCarrinho} valueMin={valueMin}
+              valueMax={valueMax} 
+              setPage={setPage}
+            />
+            <Footer /></ContainerMain>
+        </ContainerApp>
+      )
+    case 3:
+      return (
+        <ContainerApp>
+          <GlobalStyle />
+          <CarrinhoPage setPage={setPage} itensUnicos={itensUnicos} />
+        </ContainerApp>)
     default:
       break;
-  } 
+  }
 }
 
 export default App;
