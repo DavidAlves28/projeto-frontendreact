@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const ContainerCarrinho = styled.section` 
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content:space-between;
     align-content: flex-start;
     text-align: center;
-    margin: 8px 0px 0px -15px;
-    min-height: 180px;
-    box-shadow: 3px 3px 9px 1px white;
+    margin: 8px 10px 0px 30px;
+    min-height: 220px;
+    box-shadow: 3px 3px 9px 1px #222;
     border-radius: 12px;
-    width: 100%;
+    min-width: 110%;
     color: white;
     gap: 1%;
     background: linear-gradient(-255deg, #697689,#555555);
@@ -21,14 +21,44 @@ export const ListaContainer = styled.ul`
    list-style : none ;
    color:white;
    height: 10vh;
-   margin: 2px ;
 `
 export const ItemCarrinho  =styled.li`
-border: 1px solid ;
+/* border: 1px solid ; */
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-background:#696969;
+background:#2222;
 padding: 2px;
+display: flex;
+justify-content: center;
+`
+export const ButtonCard = styled.button`
+border-radius: 8px;
+cursor: pointer;
+&:hover{
+    background-color: red
+    }
+`
 
+export const ButtonCarrinho  = styled.button `
+height: 40px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+font-size: 1.3rem;
+display: flex;
+justify-content: space-around;
+align-items: center;
+cursor: pointer;
+&:hover{
+    color:#222;
+        background-image:linear-gradient(-45deg,#acb6e5, #86fde8) ;
 
+}
+`
+export const Icone = styled.img`
+
+height: 100%;
+`
+
+export const Titulo = styled.h1`
+font-size: 1.5rem;
 `

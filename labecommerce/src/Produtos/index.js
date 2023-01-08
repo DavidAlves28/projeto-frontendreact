@@ -44,7 +44,7 @@ export default function Produtos(props) {
             nome: "Caneca Nasa Branca",
             categoria: "Acessórios",
             descricao: "Caneca Nasa Branca de cerâmica",
-            preco: 149.90,
+            preco: 149.99,
         },
         {
             id: 4,
@@ -76,7 +76,7 @@ export default function Produtos(props) {
             nome: "Camiseta Astronauta Estampada",
             categoria: "Roupas",
             descricao: "Camiseta tamanho único",
-            preco: '79.99',
+            preco: 79.99,
         },
         {
             id: 8,
@@ -139,7 +139,7 @@ export default function Produtos(props) {
             nome: "Foguete Miniatura",
             categoria: "Brinquedos",
             descricao: "Foquete em miniatura  ",
-            preco: 279.90,
+            preco: 279.99,
         },
 
     ]
@@ -154,7 +154,8 @@ export default function Produtos(props) {
                     listaCarrinho={props.listaCarrinho}
                     setListaCarrinho={props.setListaCarrinho}
                     contador={props.contador} setContador={props.setContador}
-                    page={props.page} setPage={props.setPage}>
+                    totalProdutos={props.totalProdutos}
+                    page={props.page} setPage={props.setPage} removeItemCarrinho={props.removeItemCarrinho}> 
                 </CardCarrinho>
             </ContainerProdutos>
             {/* Secao onde se encontra os cards dos produtos.

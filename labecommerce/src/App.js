@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import { GlobalStyle } from "./Globalstyle/Globalstyle";
 import Header from './Header'
@@ -7,6 +7,7 @@ import { ContainerApp, ContainerMain } from "./styleApp";
 import ContainerApresentacao from "./TelaApresentacao";
 import Produtos from "./Produtos";
 import CarrinhoPage from "./CarrinhoPage";
+import CadastroCliente from "./CadastroCliente";
 
 function App() {
   //Estados 
@@ -17,6 +18,12 @@ function App() {
   const changeSearch = (e) => {
     setSearch(e.target.value)
   };
+
+  //Estado para totalizar produtos
+  const [total, setTotal] = useState([])
+
+  // estado para trocar telas
+  const [page, setPage] = useState(1)
 
   //input controlado para valor minimo
   const [valueMin, setValueMin] = useState(0)
@@ -43,11 +50,11 @@ function App() {
     setCategoria(e.target.value)
   }
 
+
   //Estado Carrinho e funcao para adicionar e remover items
   const [listaCarrinho, setListaCarrinho] = useState([])
-
-  // Contador para aumentar ou diminuir quantidade de items
   
+
 
   const adicionarCarrinho = (produto) => {
 
@@ -55,9 +62,9 @@ function App() {
     listaCarrinho.forEach((novoProduto, index) => {
       if (novoProduto.id === produto.id) {
         listaCarrinho[index].quantidade++
-        }
+      }
     })
-    
+
     const exibirLista = {
       id: produto.id,
       nome: produto.nome,
@@ -68,23 +75,32 @@ function App() {
     const addcarrinho = [...listaCarrinho, exibirLista]
     setListaCarrinho(addcarrinho)
     setTotal(produto.preco)
+  
+    localStorage.setItem(`listaProdutos`, JSON.stringify(itensUnicos))
   }
 
   // estado para não repitir item do carrinho
   const listaCarrinhoitemUnico = new Set();
-  
+
   // função para que os itens nao dupliquem
   const itensUnicos = listaCarrinho.filter((produto, add) => {
     const itemDuplicados = listaCarrinhoitemUnico.has(produto.id);
     listaCarrinhoitemUnico.add(produto.id);
+    
     return !itemDuplicados;
   });
 
-  //Estado para totalizar produtos
-  const [total, setTotal] = useState([])
+  // REMOVER ITENS
+  const removeItemCarrinho = (item) => {
+    const filterItem = listaCarrinho.filter((produto) => produto.id !== item)
+    setListaCarrinho(filterItem )
+    
+  }
+  // função para soma de preços dos itens adicionados.
+  const totalProdutos = itensUnicos.reduce((produto, nproduto) => {
+    return produto + nproduto.quantidade * nproduto.preco
+  }, 0)
 
-  // estado para trocar telas
-  const [page, setPage] = useState(1)
 
 
   // Separação de páginas para renderizar. 
@@ -105,15 +121,15 @@ function App() {
             valueMax={valueMax} changeValueMax={changeValueMax}
             ordenacao={ordenacao} changeOrdenacao={changeOrdenacao}
             categoria={categoria} changeCategoria={changeCategoria}
-
           />
             <Produtos itensUnicos={itensUnicos} categoria={categoria} changeCategoria={changeCategoria}
               search={search} ordenacao={ordenacao}
               adicionarCarrinho={adicionarCarrinho} total={total}
               setTotal={setTotal} listaCarrinho={listaCarrinho}
               setListaCarrinho={setListaCarrinho} valueMin={valueMin}
-              valueMax={valueMax} 
-              setPage={setPage}
+              valueMax={valueMax}
+              setPage={setPage} removeItemCarrinho={removeItemCarrinho}
+              totalProdutos={totalProdutos}
             />
             <Footer /></ContainerMain>
         </ContainerApp>
@@ -122,8 +138,14 @@ function App() {
       return (
         <ContainerApp>
           <GlobalStyle />
-          <CarrinhoPage setPage={setPage} itensUnicos={itensUnicos} />
+          <CarrinhoPage total={total} totalProdutos={totalProdutos} setPage={setPage} itensUnicos={itensUnicos} removeItemCarrinho={removeItemCarrinho} />
         </ContainerApp>)
+        case 4:
+          return (
+            <ContainerApp>
+              <GlobalStyle />
+              <CadastroCliente/>
+            </ContainerApp>)
     default:
       break;
   }

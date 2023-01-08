@@ -30,6 +30,7 @@ export const ListaA = styled.button`
     font-size: larger;
     letter-spacing: 2px;
     color: white;
+    cursor: pointer;
 &:hover{
     background-color: #2222;
     color: #ffff;
@@ -63,6 +64,6 @@ box-shadow: 0px 0px 7px white;
 `
 
 export const Icone = styled.img`
-
+cursor: pointer;
 height: 8vh;
 `

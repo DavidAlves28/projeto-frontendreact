@@ -14,9 +14,9 @@ export default function ContainerApresentacao(props) {
         </Titulo>
             <ContainerButton>
 
-                <ButtonPage onClick={() => changePage(2)}  > PRODUTOS</ButtonPage>
-                <ButtonPage onClick={() => changePage(3)} > CARRINHO</ButtonPage>
-                <ButtonPage onClick={() => changePage(2)} > CONTATO</ButtonPage>
+                <ButtonPage onClick={() => changePage(2)}  >PRODUTOS</ButtonPage>
+                <ButtonPage onClick={() => changePage(3)} >CARRINHO</ButtonPage>
+                
             </ContainerButton>
         </Apresentacao>
 

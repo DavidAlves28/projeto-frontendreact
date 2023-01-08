@@ -1,24 +1,16 @@
 import React from "react";
-import { ContainerCarrinho, ItemCarrinho, ListaContainer } from "./style";
+import { ButtonCard, ButtonCarrinho, ContainerCarrinho, Icone, ItemCarrinho, ListaContainer, Titulo } from "./style";
+import Carrinho from '../Imagens/carrinho-de-compras.png'
 
-export default function CardCarrinho(props) {
+export default function CardCarrinho(props) {  
+  
 
-    // Remover item do carrinho
-    const removeItemCarrinho = (item) => {
-      
-        const filterItem = props.listaCarrinho.filter((produto) => produto.id !== item)
-        props.setListaCarrinho(filterItem)
-    }
-    
-    // função para soma de preços dos itens adicionados.
-    const total = props.itensUnicos.reduce((produto, nproduto) => {
-        return produto + nproduto.quantidade * nproduto.preco
-    },0)
+  
 
 
     return (
         <ContainerCarrinho>
-            <h1>Carrinho : </h1>
+            <Titulo>Carrinho : </Titulo>
             {props.itensUnicos
                 .map((produto) => {
                     return (
@@ -28,12 +20,13 @@ export default function CardCarrinho(props) {
                                 {produto.nome}-
                                 R${produto.preco}
 
-                                <button onClick={() => removeItemCarrinho(produto.id)}>Remover</button></ItemCarrinho>
+                                <ButtonCard onClick={() => props.removeItemCarrinho(produto.id)}>Remover</ButtonCard></ItemCarrinho>
                         </ListaContainer>
                     )
                 })}
-            <h1>Total :R$ {total.toFixed(2)}</h1>
-            <button onClick={() => props.setPage(3)}>Ir Para Carrinho</button>
+            <Titulo>Total :R$ {  props.totalProdutos.toFixed(2)}</Titulo>
+            <ButtonCarrinho onClick={() => props.setPage(3)}>Ir Para Carrinho <Icone src={Carrinho} /></ButtonCarrinho>
+            
         </ContainerCarrinho>
 
 
