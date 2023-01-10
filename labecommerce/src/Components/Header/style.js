@@ -47,12 +47,13 @@ export const Nav = styled.nav`
 display: grid ;
 grid-template-columns: repeat(5,1fr);
 justify-items: center;
+width: 100%;
 `
 export const InputPesquisa = styled.input`
 width: 50%;
 height: 4vh;
-box-shadow: 0px 0px 7px white;
-border-radius: 8px;
+box-shadow: 0px 0px 7px ;
+border-radius: 5px;
 text-align: center;
 font-size: large;
 `

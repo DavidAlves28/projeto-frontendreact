@@ -25,6 +25,7 @@ export default function CarrinhoPage(props) {
                     <Preco>Preço :
                         <p>R$ {produto.preco}</p>
                     </Preco>
+                    
                     <ButtonRemover onClick={() => props.removeItemCarrinho(produto.id)}>
                         Remover item
                     </ButtonRemover>
@@ -37,7 +38,7 @@ export default function CarrinhoPage(props) {
          <DivTotal>
          <Titulo>Total da Compra </Titulo>
          <Titulo>
-          R$ : {props.totalProdutos.toFixed(2)}
+          R$  {props.totalProdutos.toFixed(2)}
          </Titulo>
          </DivTotal>       
         </Container>

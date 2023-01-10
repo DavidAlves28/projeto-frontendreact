@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, ContainerProdutos, NomeProduto, Produto, TagPreco, ImagemProduto, BotaoProduto } from "./style";
+import { Container, ContainerProdutos, NomeProduto, Produto, TagPreco, ImagemProduto, BotaoProduto, ContainerCarrinho } from "./style";
 import Capacete from "../Imagens/capacete.png";
 import CapaceteInfantil from "../Imagens/capaceteInfantil.jpg"
 import CanecaNasaBranca from "../Imagens/canecaNasa.png"
@@ -16,8 +16,7 @@ import Blusa3 from '../Imagens/blusa3.jpg'
 import Boneco1 from '../Imagens/boneco1.jpg'
 import Boneco2 from '../Imagens/boneco2.jpg'
 import Foguete2 from '../Imagens/foguete2.jpg'
-import CardCarrinho from "../CardCarrinho";
-
+import CardCarrinho from "../CardCarrinho/index";
 
 //Produtos 
 export default function Produtos(props) {
@@ -147,17 +146,7 @@ export default function Produtos(props) {
 
     return (
         <Container>
-            {/* CARD LATERAL DOS PRODUTOS ADICIONADOS! */}
-            <ContainerProdutos>
-                <CardCarrinho itensUnicos={props.itensUnicos} total={props.total}
-                    setTotal={props.setTotal}
-                    listaCarrinho={props.listaCarrinho}
-                    setListaCarrinho={props.setListaCarrinho}
-                    contador={props.contador} setContador={props.setContador}
-                    totalProdutos={props.totalProdutos}
-                    page={props.page} setPage={props.setPage} removeItemCarrinho={props.removeItemCarrinho}> 
-                </CardCarrinho>
-            </ContainerProdutos>
+           
             {/* Secao onde se encontra os cards dos produtos.
              */}
             <ContainerProdutos>
@@ -211,21 +200,20 @@ export default function Produtos(props) {
 
                             </Produto>
 
-
-
-
-                            // id={produto.id} nome={produto.nome}
-                            //     imagem={produto.imagem} descricao={produto.descricao}
-                            //     quantidade={produto.quantidade} preco={produto.preco} 
-                            //     contador={props.contador} setContador={props.setContador}
-                            //     adicionarCarrinho={props.adicionarCarrinho} 
-
-
-
-
                         )
                     })}
             </ContainerProdutos>
+             {/* CARD LATERAL DOS PRODUTOS ADICIONADOS! */}
+             <ContainerCarrinho>
+                <CardCarrinho itensUnicos={props.itensUnicos} total={props.total}
+                    setTotal={props.setTotal}
+                    listaCarrinho={props.listaCarrinho}
+                    setListaCarrinho={props.setListaCarrinho}
+                    contador={props.contador} setContador={props.setContador}
+                    totalProdutos={props.totalProdutos}
+                    page={props.page} setPage={props.setPage} removeItemCarrinho={props.removeItemCarrinho}> 
+                </CardCarrinho>
+            </ContainerCarrinho>
         </Container>
     )
 }

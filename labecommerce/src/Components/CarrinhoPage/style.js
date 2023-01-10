@@ -47,6 +47,7 @@ margin: 0 auto;
 export const Titulo = styled.h1`
 font-size: 2.6rem;
 color:  #f0f8ff;
+
 `
 export const Quantidade = styled.h2`
 grid-column: 1;
@@ -107,6 +108,9 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 color:  #f0f8ff;
+border: 1px solid ; 
+padding: 7px;
+background: cadetblue
 `
 
 export const ButtonConfirmar = styled.button`

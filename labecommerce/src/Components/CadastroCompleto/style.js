@@ -27,31 +27,31 @@ justify-content: flex-start;
 align-items:center;
 min-height: 100vh;
 `
-export const Form = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-`
 
-export const Input = styled.input`
-    width: 100%;
-    padding: 8px;
-border: 2px solid green;
-
-`
 export const Titulo = styled.h1`
-font-size: 1.8rem;
+font-size: 3rem;
+padding: 28px;
 `
-export const ButtonCadastro = styled.button`
-width: 100%;
-    padding: 8px;
-`
-export const MsgErro = styled.p `
-color: #fff;
-background-color: crimson;
-width: 100%;
+export const Dados = styled.p `
+display: flex;  
+width: 50%;
+justify-content: space-between;
+font-size: 2rem;
+text-decoration: underline;
 
 `
-export const Label = styled.label`
-border: 2px solid green
+export const ButtonRetornar = styled.button` 
+ height: 9vh;
+ cursor: pointer;
+ background: #2222;
+ color: #fff;
+ font-size: 1.6rem;
+ border-radius: 5px;
+
+ width: 15vw;
+ &:hover{
+    color:#222;
+    background-image:linear-gradient(-45deg,#acb6e5, #86fde8) ;
+
+}
 `

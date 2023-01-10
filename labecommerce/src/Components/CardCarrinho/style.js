@@ -6,11 +6,12 @@ export const ContainerCarrinho = styled.section`
     justify-content:space-between;
     align-content: flex-start;
     text-align: center;
-    margin: 8px 10px 0px 30px;
+    margin-top:  10px ;
+    /* margin-right: 50px; */
     min-height: 220px;
     box-shadow: 3px 3px 9px 1px #222;
     border-radius: 12px;
-    min-width: 110%;
+    min-width: 100%;
     color: white;
     gap: 1%;
     background: linear-gradient(-255deg, #697689,#555555);

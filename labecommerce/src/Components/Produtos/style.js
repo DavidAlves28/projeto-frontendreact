@@ -3,30 +3,35 @@ import styled from "styled-components"
 
 export const Container = styled.section`
 display: grid;
-grid-template-columns: 250px 1fr;
-margin: 1%;
-margin-bottom:20px;
+justify-content:space-between;
+align-items: flex-start;
+min-width: 90vw;
+min-height: 100vh;
+grid-template-columns: 1fr 250px ;
+margin: 1% 3% 0 0 ;
 `
 
 export const ContainerProdutos = styled.section`
 display: flex;
 flex-wrap: wrap;
-justify-content:center;
+justify-content:center ;
 align-items: flex-start;
-
 width: 100%;
-gap: 1%;
+min-height: 100%;
+/* gap: 1%; */
 color: white;
 font-size: large;
+grid-column: 1/1;
 
 `
 export const ContainerCarrinho = styled.section`
 display:flex;
 flex-direction: column;
+grid-column: 2;
+min-width: 100%;
+min-height: 100%;
 `
-export const Contador = styled.section `
-display: flex ;
-`
+
 
 
 
@@ -40,9 +45,11 @@ export const Produto = styled.section`
     align-items: center;
     text-align: center;
     background: #2222;
-    /* background: linear-gradient(-255deg,purple,violet) ; */
-    border-radius: 5px;
-    box-shadow: 1px 1px 7px ;
+  
+    border-radius: 8px;
+   
+    box-shadow: 3px 3px 9px 1px #222;
+
     min-height: 370px;
     width: 190px;
     margin: 10px;
