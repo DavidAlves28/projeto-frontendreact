@@ -1,24 +1,18 @@
 import React from "react";
-import { Apresentacao, ButtonPage, ContainerButton, TagA, Titulo } from "./style";
-
+import { Apresentacao, ButtonPage, ContainerButton, Titulo } from "./style";
+// Componente Tela de apresentação!
 export default function ContainerApresentacao(props) {
-    const changePage = (n) => {
-        props.setPage(n)
-    }
-
-
+    
     return (
         <Apresentacao>
-        <Titulo> 
-            LABECOMERCE 
-        </Titulo>
+            <Titulo>
+                LABECOMERCE
+            </Titulo>
             <ContainerButton>
-
-                <ButtonPage onClick={() => changePage(2)}  >PRODUTOS</ButtonPage>
-                <ButtonPage onClick={() => changePage(3)} >CARRINHO</ButtonPage>
-                
+                <ButtonPage onClick={() =>props.setPage(2)}>PRODUTOS</ButtonPage>
+                <ButtonPage onClick={() =>props.setPage(3)}>CARRINHO</ButtonPage>
             </ContainerButton>
-        </Apresentacao>
+        </Apresentacao >
 
     )
 }

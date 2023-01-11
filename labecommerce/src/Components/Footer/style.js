@@ -7,7 +7,7 @@ align-items: center;
 height: 8vh;
 position: relative;
 bottom: 0px;
-width: 100vw;
+min-width:100vw;
 color: #fff;
 font-size: large;
 letter-spacing: 2px ;

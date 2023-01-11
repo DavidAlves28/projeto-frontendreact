@@ -1,7 +1,7 @@
 import React from "react";
-import { ButtonCard, ButtonCarrinho, ContainerCarrinho, Icone, ItemCarrinho, ListaContainer, Titulo } from "./style";
+import { ButtonCard, ButtonCarrinho, ContainerCarrinho, Icone, ItemCarrinho, ListaContainer, Lixeira, Titulo } from "./style";
 import Carrinho from '../Imagens/carrinho-de-compras.png'
-
+import bin from '../Imagens/bin.png';
 export default function CardCarrinho(props) {  
   
 
@@ -20,7 +20,8 @@ export default function CardCarrinho(props) {
                                 {produto.nome}-
                                 R${produto.preco}
 
-                                <ButtonCard onClick={() => props.removeItemCarrinho(produto.id)}>Remover</ButtonCard></ItemCarrinho>
+                                <ButtonCard onClick={() => props.removeItemCarrinho(produto.id)}>x</ButtonCard>
+                                </ItemCarrinho>
                         </ListaContainer>
                     )
                 })}

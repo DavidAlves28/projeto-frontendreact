@@ -1,23 +1,25 @@
 import React from "react";
-import { ListaMenu, ListaA,Container, Nav, InputPesquisa, Select, Icone } from './style';
+import { ListaMenu, ListaA, Container, Nav, InputPesquisa, Select, Icone ,Aviso} from './style';
 import Carrinho from '../Imagens/carrinho-de-compras.png'
-export default function Header (props) {
-    const irParaCarrinhoPedidos = (n) => {
-        props.setPage(n)
-    }
+
+export default function Header(props) {
+  
     return (
         <Container>
-            <ListaMenu>                
-                <ListaA>Contato</ListaA>
-                <ListaA onClick={()=>irParaCarrinhoPedidos(3)}>Carrinho {props.contador}</ListaA>
-                <Icone onClick={()=>irParaCarrinhoPedidos(3)} src={Carrinho}/>
+            <ListaMenu>
+                <ListaA
+                    onClick={() => props.setPage(3)}>Carrinho 
+                </ListaA>
+                <Icone onClick={() => props.setPage(3)} src={Carrinho} ></Icone> 
+                
             </ListaMenu>
+
             <Nav>
                 <InputPesquisa onChange={props.changeSearch} type={'text'} placeholder="Pesquisar"></InputPesquisa>
 
                 <InputPesquisa onChange={props.changeValueMin} type={'number'} placeholder="Valor mínimo"></InputPesquisa>
-                
-                <InputPesquisa  onChange={props.changeValueMax} type={'number'} placeholder="Valor máximo"></InputPesquisa>
+
+                <InputPesquisa onChange={props.changeValueMax} type={'number'} placeholder="Valor máximo"></InputPesquisa>
 
                 <Select value={props.ordenacao} onChange={props.changeOrdenacao} >
                     <option value={''}> Ordernação</option>

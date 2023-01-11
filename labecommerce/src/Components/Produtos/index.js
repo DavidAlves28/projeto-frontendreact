@@ -146,14 +146,14 @@ export default function Produtos(props) {
 
     return (
         <Container>
-           
             {/* Secao onde se encontra os cards dos produtos.
              */}
             <ContainerProdutos>
-
+                {/* Filtro Pesquisa */}
                 {produtos.filter((produto) => {
                     return produto.nome.toLowerCase().includes(props.search.toLowerCase())
                 })
+                    /* filtro ordenação alfabetica */
                     .sort((produto, novoProduto) => {
                         switch (props.ordenacao) {
                             case 'crescente':
@@ -164,6 +164,7 @@ export default function Produtos(props) {
                                 return produto
                         }
                     })
+                    /* filtro ordenação categoria */
                     .filter((produto) => {
                         switch (props.categoria) {
                             case 'Brinquedos':
@@ -191,27 +192,26 @@ export default function Produtos(props) {
                                 <details>
                                     <summary>Descriçao</summary>{produto.descricao}
                                 </details>
-                                {/* <button onClick={() => props.setContador(props.contador + 1)} >+</button>
-                                <span >{props.contador}</span>
-                                <button onClick={() => props.setContador(props.contador - 1)} >-</button> */}
                                 <BotaoProduto onClick={() => props.adicionarCarrinho(produto)} >Adicionar ao Carrinho</BotaoProduto>
-
-
-
                             </Produto>
 
                         )
                     })}
             </ContainerProdutos>
-             {/* CARD LATERAL DOS PRODUTOS ADICIONADOS! */}
-             <ContainerCarrinho>
-                <CardCarrinho itensUnicos={props.itensUnicos} total={props.total}
+            {/* CARD LATERAL DOS PRODUTOS ADICIONADOS! */}
+            <ContainerCarrinho>
+                <CardCarrinho
+                    itensUnicos={props.itensUnicos}
+                    total={props.total}
                     setTotal={props.setTotal}
                     listaCarrinho={props.listaCarrinho}
                     setListaCarrinho={props.setListaCarrinho}
-                    contador={props.contador} setContador={props.setContador}
+                    contador={props.contador} 
+                    setContador={props.setContador}
                     totalProdutos={props.totalProdutos}
-                    page={props.page} setPage={props.setPage} removeItemCarrinho={props.removeItemCarrinho}> 
+                    page={props.page}
+                    setPage={props.setPage} 
+                    removeItemCarrinho={props.removeItemCarrinho}>
                 </CardCarrinho>
             </ContainerCarrinho>
         </Container>

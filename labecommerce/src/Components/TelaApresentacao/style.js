@@ -20,10 +20,11 @@ export const Apresentacao = styled.section`
 background-image: url(${galaxia}); 
 background-repeat: no-repeat ;
 background-size: 110% 110%;
-height: 100%;
-width: 100%;
+min-height: 100vh;
+min-width: 100vw;
 animation: ${gradient} 15s ease-out infinite;
 scroll-behavior: smooth;
+
 `
 
 export const Titulo = styled.h1`
@@ -43,6 +44,7 @@ text-decoration: overline underline;
     box-shadow: 1px 1px 9px 1px white;
     height: 40px;
     }
+
 `
 
 export const ContainerButton = styled.section`
@@ -52,7 +54,6 @@ display: flex;
 justify-content: center;
 align-items: flex-end;
 
-;
 
 `
 export const ButtonPage = styled.button`

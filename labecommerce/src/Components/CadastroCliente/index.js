@@ -12,11 +12,6 @@ export default function CadastroCliente(props) {
     const [erroEndereco, setErroEndereco] = useState(false)
     const [erroNumeroEnd, setErroNumeroEnd] = useState(false)
     const [erroTelefone, setErroTelefone] = useState(false)
-    const [erroSenha, setErroSenha] = useState(false)
-    const [erroConfirmaSenha, setErroConfirmaSenha] = useState(false)
-
-  
-    
    
     const enviarCadastro = () => {
         // Validações dos inputs de cadastro!
@@ -30,10 +25,9 @@ export default function CadastroCliente(props) {
         props.numeroEnd.length === 0  ? setErroNumeroEnd(true) : setErroNumeroEnd(false)
 
         props.telefone.length < 11 ? setErroTelefone(true) : setErroTelefone(false)
-        props.senha.length < 6 ? setErroSenha(true) : setErroSenha(false)
-        props.confirmaSenha.length < 6 && props.confirmaSenha === props.senha ? setErroConfirmaSenha(true) : setErroConfirmaSenha(false)
+       
         // confirmaSenha < 6 && senha === confirmaEmail ? setErroConfirmaSenha(true) : setErroConfirmaSenha(false)
-        if(props.nome.length > 8 && props.idade >=18 && props.email === props.confirmaEmail && props.senha=== props.confirmaSenha){
+        if(props.nome.length > 8 && props.idade >=18 && props.email === props.confirmaEmail ){
             props.setPage(5)
             }
           
@@ -81,16 +75,6 @@ export default function CadastroCliente(props) {
                     <Input value={props.telefone} type='tel' placeholder="(xx) xxxxx-xxxx" onChange={(e) => props.setTelefone(e.target.value)} required />
                     <MsgErro>{erroTelefone && 'Confira o número de Telefone!'}</MsgErro>
 
-                </label>
-                <label>
-                    Senha
-                    <Input type='password' value={props.senha} onChange={(e) => props.setSenha(e.target.value)} required />
-                    <MsgErro> {erroSenha && 'Senha deve conter  no mínimo 6 caracteres'  }</MsgErro>
-                </label>
-                <label>
-                    Confirmar Senha
-                    <Input type='password'  value={props.confirmaSenha} onChange={(e) => props.setConfirmaSenha(e.target.value)} required />
-                    <MsgErro> {erroConfirmaSenha && 'Senha não está correta!'}</MsgErro>
                 </label>
 
                 <ButtonCadastro onClick={enviarCadastro} >Cadastrar</ButtonCadastro>

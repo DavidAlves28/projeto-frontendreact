@@ -9,7 +9,7 @@ box-shadow: 1px 1px 9px 3px;
 height: 18vh;
 width: 100%;
 list-style: none;
-
+font-size: 1.3rem;
 
 `
 
@@ -20,7 +20,9 @@ export const ListaMenu = styled.ul`
     gap:3% ;
     height: 50%; 
     box-shadow: 1px 1px 7px mediumaquamarine;
+
 `
+//botões
 export const ListaA = styled.button`
     margin-left: 90px;
     background: transparent;
@@ -36,19 +38,17 @@ export const ListaA = styled.button`
     color: #ffff;
     border-bottom: 1px solid wheat;
     border-top: 1px solid wheat;
-    text-decoration: underline;
     text-shadow: 1px 1px 5px;
-   
 }
 `
-
-
+// navegação do menu
 export const Nav = styled.nav`
 display: grid ;
 grid-template-columns: repeat(5,1fr);
 justify-items: center;
 width: 100%;
 `
+// campo de pesquisa
 export const InputPesquisa = styled.input`
 width: 50%;
 height: 4vh;
@@ -57,14 +57,17 @@ border-radius: 5px;
 text-align: center;
 font-size: large;
 `
+// select
 export const Select = styled.select`
 width: 50%;
 height: 4vh;
 box-shadow: 0px 0px 7px white;
-
 `
-
+// imagem
 export const Icone = styled.img`
 cursor: pointer;
 height: 8vh;
+`
+export const Aviso = styled.img`
+width: 12;
 `

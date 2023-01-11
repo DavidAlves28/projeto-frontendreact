@@ -18,7 +18,6 @@ justify-content:center ;
 align-items: flex-start;
 width: 100%;
 min-height: 100%;
-/* gap: 1%; */
 color: white;
 font-size: large;
 grid-column: 1/1;
@@ -31,37 +30,27 @@ grid-column: 2;
 min-width: 100%;
 min-height: 100%;
 `
-
-
-
-
-
-
 export const Produto = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
-    background: #2222;
-  
-    border-radius: 8px;
-   
-    box-shadow: 3px 3px 9px 1px #222;
-
-    min-height: 370px;
-    width: 190px;
-    margin: 10px;
-    &:hover{
-        box-shadow: 1px 1px 9px black;
-        border-radius: 5px;
-        border: 1px solid black ;
-        border-radius: 10px;
-        background: #222
-    }
-    `
-
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+flex-wrap: wrap;
+align-items: center;
+text-align: center;
+background: #2222;
+border-radius: 8px;
+box-shadow: 3px 3px 9px 1px #222;
+min-height: 370px;
+width: 190px;
+margin: 10px;
+&:hover{
+    box-shadow: 1px 1px 9px black;
+    border-radius: 5px;
+    border: 1px solid black ;
+    border-radius: 10px;
+    background: #222
+}
+`
   
     export const NomeProduto = styled.h1`
     color: white;

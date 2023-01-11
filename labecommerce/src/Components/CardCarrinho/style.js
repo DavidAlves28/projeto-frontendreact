@@ -30,10 +30,13 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
 background:#2222;
 padding: 2px;
 display: flex;
-justify-content: center;
+justify-content: space-between;
 `
 export const ButtonCard = styled.button`
 border-radius: 8px;
+height: 100%;
+
+width: 10%;
 cursor: pointer;
 &:hover{
     background-color: red
@@ -46,6 +49,7 @@ border-bottom-right-radius: 5px;
 border-bottom-left-radius: 5px;
 font-size: 1.3rem;
 display: flex;
+width: 100%;
 justify-content: space-around;
 align-items: center;
 cursor: pointer;
@@ -62,4 +66,10 @@ height: 100%;
 
 export const Titulo = styled.h1`
 font-size: 1.5rem;
+`
+export const Lixeira = styled.img`
+width: 100%;
+height: 100%;
+
+
 `
