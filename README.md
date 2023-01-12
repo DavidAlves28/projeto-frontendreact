@@ -58,7 +58,7 @@ A Página do carrinho estará todos os produtos adicionados , valor, quantidade 
     - [x]  O usuário deve ser capaz de retornar à visualização sem filtros
 
 ### Informações 
- - O Design criado de forma simples, mas futuramente vou me aprofundas em  ```Material UI``` e ferramentas que englobam o Front-End.
+ - O Design criado de forma simples, mas futuramente vou me aprofundar em  ```Material UI``` e ferramentas que englobam o Front-End.
  -  A proposta do projeto é conseguir implementar funcionalidades básicas de uma loja como carrinho , lista de produtos , adicionar e remover itens do carrinho.
  -  nessa primeira parte do projeto os arquivos como ```Produtos``` estão Mockados  ;
  - A Renderização de telas foi feita por meio de funções e não por ```Routes```.
