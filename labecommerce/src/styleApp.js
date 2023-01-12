@@ -21,9 +21,8 @@ background: linear-gradient(90deg,#FEAC5E,#C779D0,#4BC0C8);
 background-size: 400% 400%;
 animation: ${gradient} 6s ease-in infinite;
 `  
-export const ContainerApp = styled.body`
+export const ContainerApp = styled.section`
 min-height: 100vh;
 min-width: 100vw;
 
 `
-

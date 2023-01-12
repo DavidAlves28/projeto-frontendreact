@@ -1,21 +1,21 @@
 import React from "react";
 
 import { Container, ContainerProdutos, NomeProduto, Produto, TagPreco, ImagemProduto, BotaoProduto, ContainerCarrinho } from "./style";
-import Capacete from "../Imagens/capacete.png";
-import CapaceteInfantil from "../Imagens/capaceteInfantil.jpg"
-import CanecaNasaBranca from "../Imagens/canecaNasa.png"
-import CanecaNasaPreta from "../Imagens/CanecaNasaPreta.png"
-import OnibusMiniatura from "../Imagens/onibusEspacialDiscovery.png"
-import TrajeEspacial from "../Imagens/trajeEspacial.png"
-import Camiseta1 from '../Imagens/camiseta1.jpg'
-import Camiseta2 from '../Imagens/camiseta2.jpeg'
-import Camiseta3 from '../Imagens/camiseta3.jpeg'
-import Blusa1 from '../Imagens/blusa1.jpg'
-import Blusa2 from '../Imagens/blusa2.jpg'
-import Blusa3 from '../Imagens/blusa3.jpg'
-import Boneco1 from '../Imagens/boneco1.jpg'
-import Boneco2 from '../Imagens/boneco2.jpg'
-import Foguete2 from '../Imagens/foguete2.jpg'
+import Capacete from "../../assets/Imagens/capacete.png";
+import CapaceteInfantil from "../../assets/Imagens/capaceteInfantil.jpg"
+import CanecaNasaBranca from "../../assets/Imagens/canecaNasa.png"
+import CanecaNasaPreta from "../../assets/Imagens/CanecaNasaPreta.png"
+import OnibusMiniatura from "../../assets/Imagens/onibusEspacialDiscovery.png"
+import TrajeEspacial from "../../assets/Imagens/trajeEspacial.png"
+import Camiseta1 from '../../assets/Imagens/camiseta1.jpg'
+import Camiseta2 from '../../assets/Imagens/camiseta2.jpeg'
+import Camiseta3 from '../../assets/Imagens/camiseta3.jpeg'
+import Blusa1 from '../../assets/Imagens/blusa1.jpg'
+import Blusa2 from '../../assets/Imagens/blusa2.jpg'
+import Blusa3 from '../../assets/Imagens/blusa3.jpg'
+import Boneco1 from '../../assets/Imagens/boneco1.jpg'
+import Boneco2 from '../../assets/Imagens/boneco2.jpg'
+import Foguete2 from '../../assets/Imagens/foguete2.jpg'
 import CardCarrinho from "../CardCarrinho/index";
 
 //Produtos 
@@ -122,7 +122,7 @@ export default function Produtos(props) {
             imagem: Boneco1,
             nome: "Boneco Miniatura",
             categoria: "Brinquedos",
-            descricao: "Boneco miniatura Astronauta",
+            descricao: "Boneco jogador miniatura Astronauta",
             preco: 29.99,
         },
         {

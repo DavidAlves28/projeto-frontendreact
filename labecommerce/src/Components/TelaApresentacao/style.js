@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import galaxia from "../Imagens/galaxiaTerra.jpg"
+import galaxia from "../../assets/Imagens/galaxiaTerra.jpg"
 import { keyframes } from "styled-components";
 
 
@@ -24,37 +24,34 @@ min-height: 100vh;
 min-width: 100vw;
 animation: ${gradient} 15s ease-out infinite;
 scroll-behavior: smooth;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
 
 `
 
 export const Titulo = styled.h1`
 height: 30px;
 color: white;
-position: fixed;
-left: 150px;
-top: 200px;
+width: max-content;
 font-family: Georgia, 'Times New Roman', Times, serif;
 font-size: xx-large;
 letter-spacing: 2px;
 text-shadow: 2px 2px 9px black;
-text-decoration: overline underline;
+text-decoration: underline ;
+/* padding: 30px 30px; */
+
 &:hover{
     color: white;  
     background: #222;
     box-shadow: 1px 1px 9px 1px white;
-    height: 40px;
     }
 
 `
-
 export const ContainerButton = styled.section`
-height: 60vh;
-width: 50vw;
-display: flex;
-justify-content: center;
-align-items: flex-end;
-
-
+height: 100%;
+width: auto;
 `
 export const ButtonPage = styled.button`
 padding: 10px 25px;
@@ -67,7 +64,7 @@ color:  white;
 background: transparent ;
 border: none;
 text-decoration: overline underline;
-
+cursor: pointer;
 text-shadow: 1px 1px 9px black;
 &:hover{
     color: white;

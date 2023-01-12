@@ -3,24 +3,14 @@ import { useEffect, useState } from "react";
 import Footer from "./Components/Footer";
 import { GlobalStyle } from "./Globalstyle/Globalstyle";
 import Header from './Components/Header'
-import { ContainerApp, ContainerMain } from "./styleApp";
+import { ContainerApp, ContainerMain} from "./styleApp";
 import ContainerApresentacao from "./Components/TelaApresentacao/index";
 import Produtos from "./Components/Produtos/index";
 import CarrinhoPage from "./Components/CarrinhoPage/index";
-import CadastroCliente from "./Components/CadastroCliente/index";
-import CadastroCompleto from "./Components/CadastroCompleto/index";
 
 function App() {
-  //Estados para input de cadastro
-  const [nome, setNome] = useState('')
-  const [idade, setIdade] = useState('')
-  const [email, setEmail] = useState('')
-  const [confirmaEmail, setConfirmaEmail] = useState('')
-  const [endereco, setEndereco] = useState('')
-  const [numeroEnd, setNumeroEnd] = useState('')
-  const [telefone, setTelefone] = useState('')
-
-  //Estados 
+  
+  //Estados  
   // input controlado de pesquisa 
   const [search, setSearch] = useState("")
   // onChange do input
@@ -117,7 +107,8 @@ function App() {
           <ContainerApresentacao
             page={page}
             setPage={setPage}
-          />
+          />       
+          
         </ContainerApp>)
     case 2:
       return (
@@ -171,48 +162,6 @@ function App() {
             totalProdutos={totalProdutos}
             setPage={setPage} itensUnicos={itensUnicos}
             removeItemCarrinho={removeItemCarrinho}
-          />
-        </ContainerApp>)
-    case 4:
-      return (
-        <ContainerApp>
-          <GlobalStyle />
-          <CadastroCliente
-            setPage={setPage}
-            nome={nome}
-            setNome={setNome}
-            email={email}
-            setEmail={setEmail}
-            confirmaEmail={confirmaEmail} 
-            setConfirmaEmail={setConfirmaEmail}
-            endereco={endereco} 
-            setEndereco={setEndereco}
-            numeroEnd={numeroEnd} 
-            setNumeroEnd={setNumeroEnd}
-            telefone={telefone} 
-            setTelefone={setTelefone}
-            idade={idade} 
-            setIdade={setIdade}
-          />
-        </ContainerApp>)
-    case 5:
-      return (
-        <ContainerApp>
-          <GlobalStyle />
-          <CadastroCompleto
-            setPage={setPage}
-            nome={nome}
-            setNome={setNome}
-            email={email}
-            endereco={endereco}
-            telefone={telefone}
-            setEmail={setEmail}
-            numeroEnd={numeroEnd}
-            setConfirmaEmail={setConfirmaEmail}
-            setIdade={setIdade}
-            setTelefone={setTelefone}
-            setNumeroEnd={setNumeroEnd}
-            setEndereco={setEndereco}
           />
         </ContainerApp>)
     default:

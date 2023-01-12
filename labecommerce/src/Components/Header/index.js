@@ -1,12 +1,15 @@
 import React from "react";
 import { ListaMenu, ListaA, Container, Nav, InputPesquisa, Select, Icone ,Aviso} from './style';
-import Carrinho from '../Imagens/carrinho-de-compras.png'
+import Carrinho from '../../assets/Imagens/carrinho-de-compras.png'
 
 export default function Header(props) {
   
     return (
         <Container>
             <ListaMenu>
+                <ListaA
+                    onClick={() => props.setPage(1)}>Tela Inicial 
+                </ListaA>
                 <ListaA
                     onClick={() => props.setPage(3)}>Carrinho 
                 </ListaA>

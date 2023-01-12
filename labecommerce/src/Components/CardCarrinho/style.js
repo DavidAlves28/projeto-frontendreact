@@ -6,8 +6,7 @@ export const ContainerCarrinho = styled.section`
     justify-content:space-between;
     align-content: flex-start;
     text-align: center;
-    margin-top:  10px ;
-    /* margin-right: 50px; */
+    margin-top:  10px ;    
     min-height: 220px;
     box-shadow: 3px 3px 9px 1px #222;
     border-radius: 12px;
@@ -16,7 +15,6 @@ export const ContainerCarrinho = styled.section`
     gap: 1%;
     background: linear-gradient(-255deg, #697689,#555555);
 
-    
 `
 export const ListaContainer = styled.ul`
    list-style : none ;
@@ -24,7 +22,7 @@ export const ListaContainer = styled.ul`
    height: 10vh;
 `
 export const ItemCarrinho  =styled.li`
-/* border: 1px solid ; */
+
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 background:#2222;

@@ -1,12 +1,8 @@
 import React from "react";
 import { ButtonCard, ButtonCarrinho, ContainerCarrinho, Icone, ItemCarrinho, ListaContainer, Lixeira, Titulo } from "./style";
-import Carrinho from '../Imagens/carrinho-de-compras.png'
-import bin from '../Imagens/bin.png';
+import Carrinho from '../../assets/Imagens/carrinho-de-compras.png'
 export default function CardCarrinho(props) {  
   
-
-  
-
 
     return (
         <ContainerCarrinho>

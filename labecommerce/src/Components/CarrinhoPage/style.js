@@ -30,15 +30,11 @@ min-height: 100vh;
 
 
 export const ContainerCarrinho = styled.main`
-/* height: 100vh; */
 width: 100%;
-
 `
-
-
 export const Tabela = styled.section`
 display: grid;
-grid-template-columns: repeat(4,1fr);
+grid-template-columns: repeat(5,1fr);
 background: #f0f8ff;
 width: 65%;
 margin: 0 auto;
@@ -68,14 +64,21 @@ border: 1px solid green;
 width:100%;
 text-align:center;
 `
-export const ButtonRemover = styled.button`
+export const SubTotal = styled.h2`
 grid-column: 4;
+border: 1px solid green;
+width:100%;
+text-align:center;
+`
+export const ButtonRemover = styled.button`
+grid-column: 5;
 border: 1px solid ;
 width:100%;
 text-align:center;
 background: #dc143c;
 font-size: 1.5rem;
 `
+
 
 export const ButtonRetornar = styled.button` 
  height: 9vh;
