@@ -9,6 +9,12 @@ min-width: 90vw;
 min-height: 100vh;
 grid-template-columns: 1fr 250px ;
 margin: 1% 3% 0 0 ;
+
+  //mobile
+  @media screen and (max-width: 767px){
+   display: flex;
+   flex-direction: column;
+}
 `
 
 export const ContainerProdutos = styled.section`
@@ -21,6 +27,12 @@ min-height: 100%;
 color: white;
 font-size: large;
 grid-column: 1/1;
+  //mobile
+  @media screen and (max-width: 767px){
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   min-width: 95vw;
+}
 
 `
 export const ContainerCarrinho = styled.section`
@@ -50,6 +62,13 @@ margin: 10px;
     border-radius: 10px;
     background: #222
 }
+  //mobile
+  @media screen and (max-width: 767px){
+   width: 90%;
+ 
+}
+
+
 `
   
     export const NomeProduto = styled.h1`

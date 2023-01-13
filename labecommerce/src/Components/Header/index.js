@@ -1,11 +1,11 @@
-import React from "react";
-import { ListaMenu, ListaA, Container, Nav, InputPesquisa, Select, Icone ,Aviso} from './style';
+import React, { useState } from "react";
+import { ListaMenu, ListaA, Container, Nav, InputPesquisa,InputPesquisaTexto , Select, Icone ,Aviso} from './style';
 import Carrinho from '../../assets/Imagens/carrinho-de-compras.png'
 
 export default function Header(props) {
-  
     return (
         <Container>
+          
             <ListaMenu>
                 <ListaA
                     onClick={() => props.setPage(1)}>Tela Inicial 
@@ -18,7 +18,7 @@ export default function Header(props) {
             </ListaMenu>
 
             <Nav>
-                <InputPesquisa onChange={props.changeSearch} type={'text'} placeholder="Pesquisar"></InputPesquisa>
+                <InputPesquisaTexto onChange={props.changeSearch} type={'text'} placeholder="Pesquisar"></InputPesquisaTexto>
 
                 <InputPesquisa onChange={props.changeValueMin} type={'number'} placeholder="Valor mínimo"></InputPesquisa>
 
