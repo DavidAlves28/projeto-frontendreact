@@ -96,7 +96,9 @@ function App() {
   useEffect(() => {
     localStorage.length === 0 ? setListaCarrinho([]) : setListaCarrinho(JSON.parse(localStorage.getItem('listaProdutos')))
   }, [])
-  
+
+
+
 
   // Separação de páginas para renderizar. 
   switch (page) {
@@ -129,6 +131,7 @@ function App() {
               changeCategoria={changeCategoria}
               setPage={setPage}
               alert={alert}
+              
             />
             <Produtos
               // Props

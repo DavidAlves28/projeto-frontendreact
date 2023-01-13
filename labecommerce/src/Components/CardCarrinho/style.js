@@ -20,6 +20,8 @@ export const ListaContainer = styled.ul`
    list-style : none ;
    color:white;
    height: 10vh;
+   margin-bottom:1vh ;
+
 `
 export const ItemCarrinho  =styled.li`
 
@@ -29,16 +31,29 @@ background:#2222;
 padding: 2px;
 display: flex;
 justify-content: space-between;
+    //mobile
+    @media screen and (max-width: 767px ){
+    width: 95vw ;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    order: 1;
+}
 `
 export const ButtonCard = styled.button`
 border-radius: 8px;
 height: 100%;
-
 width: 10%;
 cursor: pointer;
 &:hover{
     background-color: red
     }
+    //mobile
+    @media screen and (max-width: 767px ){
+    width: 7vw; 
+    font-size: 1.7rem;
+    justify-content: space-between;
+    order: 1;
+}    
 `
 
 export const ButtonCarrinho  = styled.button `
@@ -56,6 +71,11 @@ cursor: pointer;
         background-image:linear-gradient(-45deg,#acb6e5, #86fde8) ;
 
 }
+    //mobile
+    @media screen and (max-width: 767px ){
+    margin-bottom: 1vh;
+   
+} 
 `
 export const Icone = styled.img`
 
@@ -64,6 +84,13 @@ height: 100%;
 
 export const Titulo = styled.h1`
 font-size: 1.5rem;
+    //mobile
+    @media screen and (max-width: 767px ){
+    margin-bottom: 1vh;
+    width: 100%;
+    font-size: 1.7rem;
+   
+}
 `
 export const Lixeira = styled.img`
 width: 100%;

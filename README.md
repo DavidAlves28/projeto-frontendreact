@@ -57,7 +57,8 @@ A Página do carrinho estará todos os produtos adicionados , valor, quantidade 
     - [x]  O usuário deve ser capaz de adicionar  filtros, busca e ordenação simultaneamente
     - [x]  O usuário deve ser capaz de retornar à visualização sem filtros
 
-### Informações 
+## Informações 
+ - O projeto está responsivo, mas faltou incrementar um menu com filtrs mais dinâmico. 
  - O Design criado de forma simples, mas futuramente vou me aprofundas em  ```Material UI``` e ferramentas que englobam o Front-End.
  -  A proposta do projeto é conseguir implementar funcionalidades básicas de uma loja como carrinho , lista de produtos , adicionar e remover itens do carrinho.
  -  nessa primeira parte do projeto os arquivos como ```Produtos``` estão Mockados  ;
