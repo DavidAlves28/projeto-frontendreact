@@ -1,6 +1,6 @@
 # Projeto Front-end React  Parte-1
  
-
+Deploy : https://projeto-frontend-react.vercel.app/
 ### Projeto  Labecommerce  
 
 O intuito deste projeto é criar do zero uma página de e-commerce usando os pilares do react nessa parte, utilizando: 
